@@ -47,3 +47,23 @@
 #CapitalObtenido = str(round(Inversion*(Interes/100+1)**Años,2))
 #print('Capital obtenido en la Inversión:', CapitalObtenido)
 #Ejercicio 10
+#hola
+#Ejercicio 1
+#print('Ingrese un número entero positivo')
+#N = int(input())
+#Resultado = ((N*(N+1))/2)
+#if Resultado > 20 :
+#  print('El resultado es:', Resultado, ', es un gran número!')
+#else:
+#  print('El resultado es', Resultado)
+#Ejercicio 2
+print('Escribe dos números enteros')
+N = int(input())
+M = int(input())
+C = (N/M)
+print('El Resultado es: ', C)
+R = str(N%M)
+print('Residuo: ', R)
+if C<1 : print('El divisor es mayor al dividendo.')
+if C>1 : print('El divisor es menor que el dividendo.')
+if C==1 : print('El divisor y el dividendo son iguales.')
