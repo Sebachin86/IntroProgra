@@ -92,5 +92,50 @@
 #Respuesta = input('Está Seguro?')
 #if Respuesta == 'Si' : print('Contenedor enviado')
 #if Respuesta == 'No' : print('Contenedor no enviado')
-
-  
+#Ejercicio 1
+#print('Escribe el primer número')
+#numero1 = int(input())
+#print('Escribe el segundo número')
+#numero2 = int(input())
+#def suma (numero1,numero2):
+#  return (numero1+numero2)
+#suma1y2 = suma(numero1,numero2)
+#print('El resultado de la suma es' , suma1y2)
+#Ejercicio2
+#print('Escribe el primer número')
+#numero1 = int(input())
+#print('Escribe el segundo número')
+#numero2 = int(input())
+#def resta (numero1,numero2):
+#  return (numero1-numero2)
+#resta1y2 = resta(numero1,numero2)
+#print('El resultado de la resta es' , resta1y2)
+#Ejercicio3
+#print('Escribe el primer número')
+#numero1 = int(input())
+#print('Escribe el segundo número')
+#numero2 = int(input())
+#def multi (numero1,numero2):
+#  return (numero1*numero2)
+#multi1y2 = multi(numero1,numero2)
+#print('El resultado de la multiplicación es' , multi1y2)
+#Ejercicio4 correjir division por cero
+#print('Escribe el primer número')
+#print('Escribe el segundo número')
+#numero2 = int(input())
+#def divi (numero1,numero2):
+#  return (numero1/numero2)
+#divi1y2 = divi(numero1,numero2)
+#if numero1 == 0 : print('El resultado no está definido')
+#elif numero2 == 0 : print('El resultado no está definido')
+#else: print('El resultado de la división es' , divi1y2)
+#Ejercicio 5 calculadorano terminado 
+print('Escribe el primer número')
+numero1 = int(input())
+print('Escribe el segundo número')
+numero2 = int(input())
+print('Qué operación desea realizar? 1 (Suma), 2 (Resta), 3 (Multiplicación), 4 (División)')
+def sumar (numero1,numero2):
+  return (numero1+numero2)
+suma1y2 = sumar(numero1,numero2)
+if input('1') : print('El resultado de la suma es' , suma1y2)
