@@ -130,12 +130,80 @@
 #elif numero2 == 0 : print('El resultado no está definido')
 #else: print('El resultado de la división es' , divi1y2)
 #Ejercicio 5 calculadorano terminado 
-print('Escribe el primer número')
-numero1 = int(input())
-print('Escribe el segundo número')
-numero2 = int(input())
-print('Qué operación desea realizar? 1 (Suma), 2 (Resta), 3 (Multiplicación), 4 (División)')
-def sumar (numero1,numero2):
-  return (numero1+numero2)
-suma1y2 = sumar(numero1,numero2)
-if input('1') : print('El resultado de la suma es' , suma1y2)
+#print('Escribe el primer número')
+#numero1 = int(input())
+#print('Escribe el segundo número')
+#numero2 = int(input())
+#print('Qué operación desea realizar? 1 (Suma), 2 (Resta), 3 (Multiplicación), 4 (División)')
+#def sumar (numero1,numero2):
+  #return (numero1+numero2)
+#suma1y2 = sumar(numero1,numero2)
+#if input('1') : print('El resultado de la suma es' , suma1y2)
+#Ejercicio 6
+#def intereses(inv):
+  #d= inv
+  #if (d>0 and d<1000000):
+    #return 2
+  #elif(d>=1000000 and d < 2000000):
+    #return 5
+  #else:
+    #return 7
+
+#def calBalance(int, inv):
+  #n=int
+  #d=inv
+  #return round((d*(1+(n/100))),2)
+
+#def ctaAhorro():
+  ##inversion,interes,b1,b2,b3 = 0.0
+  #inversion = float(input('Ingrese el valor de la inversión: '))
+  #interes=intereses(inversion)
+  #b1=calBalance(interes,inversion)
+  #b2=calBalance(interes,b1)
+  #b3=calBalance(interes,b2)
+  #print('Balance año 1: ' + str(b1) + ' Balance año 2: ' + str(b2) +  'Balance año 3: ' + str(b3))
+
+#ctaAhorro()
+#Ejercicio1
+#def calAreaTri(base,altura):
+  #area = (base * altura)/2
+  #return area
+
+#def calAreaCua(lado):
+  #area = (lado * lado)
+  #return area
+
+#def calAreaCir(radio):
+  #area = (math.pi * (radio)**2)
+  #return area
+
+#def main():
+  #figura = input('¿Qué figura desea calcular? (triangulo/cuadrado/circulo): ')
+  #if figura == 'triangulo':
+      #base= float(input('Ingrese la base del triangulo'))
+
+
+##profe
+def areaTriangulo(b,a):
+  return(b*a)/2
+
+def areaCuadrado(bc,ac):
+  return bc*ac
+
+def areaCirculo(r):
+  return(3.14159*(r**2))
+
+def areaFig():
+  area=0.0
+  figura=''
+  figura = input('Escriba la figura a la que se le desea calcular el área: ')
+  
+  if (figura.lower()=='triangulo'):
+    base=0.0
+    altura=0.0
+    base = float(input('Ingrese la base '))
+    altura = float(input('Ingrese la altura '))
+    area = areaTriangulo(base,altura)
+    print('El área del triangulo es: ' , area)
+
+areaFig()
