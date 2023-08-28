@@ -184,26 +184,59 @@
 
 
 ##profe
-def areaTriangulo(b,a):
-  return(b*a)/2
+#def areaTriangulo(b,a):
+  #return(b*a)/2
 
-def areaCuadrado(bc,ac):
-  return bc*ac
+#def areaCuadrado(bc,ac):
+  #return bc*ac
 
-def areaCirculo(r):
-  return(3.14159*(r**2))
+#def areaCirculo(r):
+  #return(3.14159*(r**2))
 
-def areaFig():
-  area=0.0
-  figura=''
-  figura = input('Escriba la figura a la que se le desea calcular el área: ')
+#def areaFig():
+  #area=0.0
+  #figura=''
+  #figura = input('Escriba la figura a la que se le desea calcular el área: ')
   
-  if (figura.lower()=='triangulo'):
-    base=0.0
-    altura=0.0
-    base = float(input('Ingrese la base '))
-    altura = float(input('Ingrese la altura '))
-    area = areaTriangulo(base,altura)
-    print('El área del triangulo es: ' , area)
+  #if (figura.lower()=='triangulo'):
+    #base=0.0
+    #altura=0.0
+    #base = float(input('Ingrese la base '))
+    #altura = float(input('Ingrese la altura '))
+    #area = areaTriangulo(base,altura)
+    #print('El área del triangulo es: ' , area)
 
-areaFig()
+#areaFig()
+#Ejercicio3
+#def maximo(a,b):
+  #if x>y:
+    #return x
+  #else:
+    #return y
+
+#def minimo(a,b):
+  #if x<y:
+    #return x
+  #else:
+    #return y
+
+#programa principal
+#x=int(input('Un número: '))
+#y=int(input('Otro número: '))
+#print(maximo(x-3, minimo(x+2, y-5)))
+#Ejercicio 4
+precioSinIVA = float(input('Ingrese el precio sin IVA del estéreo'))
+marca = input('Ingrese la marca del estéreo')
+
+descuento = 0.10
+if marca == 'NOSY':
+    descuento += 0.05
+
+if precioSinIVA >= 2000000:
+  precioConDescuento = precioSinIVA * (descuento)
+
+
+IVA = 0.20
+precioConIVA = precioSinIVA * (IVA)
+
+print(f'El cliente pagará ${precioConIVA} con IVA incluido')
