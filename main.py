@@ -225,18 +225,18 @@
 #y=int(input('Otro número: '))
 #print(maximo(x-3, minimo(x+2, y-5)))
 #Ejercicio 4
-precioSinIVA = float(input('Ingrese el precio sin IVA del estéreo'))
-marca = input('Ingrese la marca del estéreo')
+#precioSinIVA = float(input('Ingrese el precio sin IVA del estéreo'))
+#marca = input('Ingrese la marca del estéreo')
 
-descuento = 0.10
-if marca == 'NOSY':
-    descuento += 0.05
+#descuento = 0.10
+#if marca == 'NOSY':
+    #descuento += 0.05
 
-if precioSinIVA >= 2000000:
-  precioConDescuento = precioSinIVA * (descuento)
+#if precioSinIVA >= 2000000:
+  #precioConDescuento = precioSinIVA * (descuento)
 
 
-IVA = 0.20
-precioConIVA = precioSinIVA * (IVA)
+#IVA = 0.20
+#precioConIVA = precioSinIVA * (IVA)
 
-print(f'El cliente pagará ${precioConIVA} con IVA incluido')
+#print(f'El cliente pagará ${precioConIVA} con IVA incluido')
