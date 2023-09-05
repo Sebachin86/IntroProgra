@@ -240,3 +240,184 @@
 #precioConIVA = precioSinIVA * (IVA)
 
 #print(f'El cliente pagará ${precioConIVA} con IVA incluido')
+
+
+
+
+
+
+
+
+'''año = int(input("Ingrese un año: "))
+
+#los años bisiestos son múltiplos de 4, pero los múltiplos de 100 no lo son, aunque los múltiplos de 400 sí, Ejemplos de respuesta: 2012 es bisiesto, 2010 no es bisiesto, 2000 es bisiesto, 1900 no es bisiesto
+if (año % 4 == 0 and año % 100 != 0) or (año % 400 == 0):
+    print(año , "es bisiesto")
+else:
+    print(año , "no es bisiesto")'''
+
+
+
+'''altura = float(input("Ingrese la altura del perro en cm: "))
+peso = float(input("Ingrese el peso del perro en kg: "))
+
+# El tamaño de los perros mestizos pequeños es determinado por la altura hasta 30 cm y su peso aproxima los 15 kilos. Los perros mestizos medianos, miden entre 30 y 40 cm de altura y pueden llegar pesar entre 15 y 25 kg. Y finalmente los perros mestizos grandes suelen medir entre 40 y 60 cm y pesar entre 25 y 45 kg.
+if altura <= 30 and (peso >= 14.5 and peso < 16.5):
+    print("El perro es pequeño")
+elif altura > 30 and altura <= 40 and peso > 15 and peso <= 25:
+    print("El perro es mediano")
+elif altura > 40 and altura <= 60 and peso > 25 and peso <= 45:
+    print("El perro es grande")
+else:
+    print("El tamaño del perro no se puede determinar")'''
+
+
+
+
+'''# Kelvin a Celsius
+def KaC(temperatura):
+    return temperatura - 273.15
+
+# Kelvin a Fahrenheit
+def KaF(temperatura):
+    return (temperatura - 273.15) * 9/5 + 32
+
+# Celsius a Kelvin
+def CaK(temperatura):
+    return temperatura + 273.15
+
+# Celsius a Fahrenheit
+def CaF(temperatura):
+    return (temperatura * 9/5) + 32
+
+# Fahrenheit a Kelvin
+def FaK(temperatura):
+    return (temperatura - 32) * 5/9 + 273.15
+
+# Fahrenheit a Celsius
+def FaC(temperatura):
+    return (temperatura - 32) * 5/9
+
+temperatura = float(input("Ingrese la temperatura: "))
+escalaActual = input("Ingrese la escala actual (K, C o F): ")
+escalaConversion = input("Ingrese la escala a la que desea convertir (K, C o F): ")
+
+if escalaActual == 'K':
+    if escalaConversion == 'C':
+        resultado = KaC(temperatura)
+    elif escalaConversion == 'F':
+        resultado = KaF(temperatura)
+elif escalaActual == 'C':
+    if escalaConversion == 'K':
+        resultado = CaK(temperatura)
+    elif escalaConversion == 'F':
+        resultado = CaF(temperatura)
+elif escalaActual == 'F':
+    if escalaConversion == 'K':
+        resultado = FaK(temperatura)
+    elif escalaConversion == 'C':
+        resultado = FaC(temperatura)
+
+
+print("La temperatura convertida es: " , resultado , escalaConversion)'''
+
+
+
+
+
+'''nombre = input("Ingrese el nombre del participante: ")
+edad = int(input("Ingrese la edad del participante: "))
+
+
+grupo = ""
+costoBase = 0
+
+
+if 10 <= edad <= 17:
+    grupo = "Niños"
+    costoBase = 25000
+    if 10 <= edad <= 13:
+        descuento = 0.15
+    elif edad > 13 and edad <= 17:
+        descuento = 0.08
+elif 18 <= edad <= 50:
+    grupo = "Adultos"
+    costoBase = 35000
+    if 18 <= edad <= 30:
+        descuento = 0.11
+    elif edad > 30 and edad <= 50:
+        descuento = 0.09
+elif edad > 50:
+    grupo = "Adulto Mayor"
+    costoBase = 50000
+    if edad > 65:
+        descuento = 0.40
+else:
+    print("El participante no califica para ningún grupo.")
+    exit()
+
+valorConDescuento = costoBase - (costoBase * descuento)
+
+print("Nombre del participante: " , nombre)
+print("Grupo: " , grupo)
+print("Costo del grupo: $" , costoBase)
+print("Valor a pagar con descuento: $" , valorConDescuento)'''
+
+
+
+
+
+
+
+
+'''tipoRecipiente = input("Ingrese el tipo de recipiente (cubo, cilindro o esfera): ").lower()
+
+if tipoRecipiente == "cubo":
+    lado = float(input("Ingrese la longitud de un lado del cubo: "))
+    volumenCubo = lado ** 3
+    print("El volumen del cubo es: " , volumenCubo)
+elif tipoRecipiente == "cilindro":
+    radio = float(input("Ingrese el radio del cilindro: "))
+    altura = float(input("Ingrese la altura del cilindro: "))
+    volumenCilindro = 3.14159 * radio**2 * altura
+    print("El volumen del cilindro es: " , volumenCilindro)
+elif tipoRecipiente == "esfera":
+    radio = float(input("Ingrese el radio de la esfera: "))
+    volumenEsfera = (4/3) * 3.14159 * radio**3
+    print("El volumen de la esfera es: " , volumenEsfera)
+else:
+    print("Tipo de recipiente no válido. Por favor, ingrese cubo, cilindro o esfera.")'''
+
+
+
+
+cantidadCubos = int(input("Ingrese la cantidad de cubos de Rubik a enviar: "))
+
+tipoCaja = input("Ingrese el tipo de caja (pequeña, mediana, grande o extragrande): ").lower()
+
+
+volumenCubo = 167
+
+volumenCajaPequeña = 5000
+volumenCajaMediana = 7000
+volumenCajaGrande = 10000
+volumenCajaExtragrande = 15000
+
+cantidadCajasNecesarias = 0
+
+
+if tipoCaja == "pequeña":
+    cantidadCajasNecesarias = cantidadCubos * volumenCubo / volumenCajaPequeña
+elif tipoCaja == "mediana":
+    cantidadCajasNecesarias = cantidadCubos * volumenCubo / volumenCajaMediana
+elif tipoCaja == "grande":
+    cantidadCajasNecesarias = cantidadCubos * volumenCubo / volumenCajaGrande
+elif tipoCaja == "extragrande":
+    cantidadCajasNecesarias = cantidadCubos * volumenCubo / volumenCajaExtragrande
+
+if cantidadCajasNecesarias > 0:
+    print(f"Se necesitan {int(cantidadCajasNecesarias)} cajas {tipoCaja} para el envío.")
+else:
+    print("No se puede realizar el envío con la caja seleccionada debido al tamaño insuficiente.")
+
+
