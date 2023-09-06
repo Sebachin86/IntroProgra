@@ -391,7 +391,7 @@ else:
 
 
 
-cantidadCubos = int(input("Ingrese la cantidad de cubos de Rubik a enviar: "))
+'''cantidadCubos = int(input("Ingrese la cantidad de cubos de Rubik a enviar: "))
 
 tipoCaja = input("Ingrese el tipo de caja (pequeña, mediana, grande o extragrande): ").lower()
 
@@ -418,6 +418,92 @@ elif tipoCaja == "extragrande":
 if cantidadCajasNecesarias > 0:
     print(f"Se necesitan {int(cantidadCajasNecesarias)} cajas {tipoCaja} para el envío.")
 else:
-    print("No se puede realizar el envío con la caja seleccionada debido al tamaño insuficiente.")
+    print("No se puede realizar el envío con la caja seleccionada debido al tamaño insuficiente.")'''
+
+
+'''def intereses(inv):
+  d= inv
+  if (d>0 and d<1000000):
+    return 2
+  elif(d>=1000000 and d < 2000000):
+    return 5
+  else:
+    return 7
+
+def calBalance(int, inv):
+  n=int
+  d=inv
+  return round((d*(1+(n/100))),2)
+
+def ctaAhorro():
+  inversion,interes,b1,b2,b3 = 0.0
+  inversion = float(input('Ingrese el valor de la inversión: '))
+  interes=intereses(inversion)
+  b1=calBalance(interes,inversion)
+  b2=calBalance(interes,b1)
+  b3=calBalance(interes,b2)
+  print('Balance año 1: ' + str(b1) + ' Balance año 2: ' + str(b2) +  'Balance año 3: ' + str(b3))
+
+ctaAhorro()'''
+
+
+
+
+'''#Parcial1
+#Punto2
+def intereses(inv):
+  d= inv
+  if (d>0 and d<1000000):
+    return 2
+  elif(d>=1000000 and d < 2000000):
+    return 5
+  else:
+    return 7
+
+def calBalance(int, inv):
+  n=int
+  d=inv
+  return round((d*(1+(n/100))),2)
+
+def ctaAhorro():
+  #inversion,interes,b1,b2,b3 = 0.0
+  inversion = float(input('Ingrese el valor de la inversión: '))
+  interes=intereses(inversion)
+  b1=calBalance(interes,inversion)
+  b2=calBalance(interes,b1)
+  b3=calBalance(interes,b2)
+  print('Balance año 1: ' + str(b1) + ' Balance año 2: ' + str(b2) +  ' Balance año 3: ' + str(b3))
+
+ctaAhorro()'''
+'''#Ejercicio 3
+def porcentaje(w,z):
+
+    return (w*(1+(z/100)))
+
+ 
+
+w=int(input("Ingrese valor: "))
+
+z=int(input("Ingrese porcentaje: "))
+
+print(round(porcentaje(w-20000, z+2),2))'''
+#Ejercicio 4
+panComprado = int(input("Ingrese la cantidad de Pan tajado comprado "))
+arepasCompradas = int(input("Ingrese la cantidad de Arepas compradas "))
+jamonesComprados = int(input("Ingrese la cantidad de Jamon comprado "))
+valorjamonesComprados = jamonesComprados * 7000
+valorpanComprado = panComprado *
+valorarepasCompradas = arepasCompradas * 
+if jamonesComprados == 2:
+    descuento = 0.02
+    if jamonesComprados >2 and jamonesComprados <=5:
+        descuento = 0.05
+    elif jamonesComprados > 5:
+        valorJamonescomprados - 7000
+if arepasCompradas >= 1:
+    descuento = 0.03
+if arepasCompradas >=1 and panComprado >=1 and jamonesComprados >=1:
+  descuento = 0.02
+  valorTotal * descuento
 
 
