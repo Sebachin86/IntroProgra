@@ -487,7 +487,7 @@ w=int(input("Ingrese valor: "))
 z=int(input("Ingrese porcentaje: "))
 
 print(round(porcentaje(w-20000, z+2),2))'''
-#Ejercicio 4
+'''#Ejercicio 4
 panComprado = int(input("Ingrese la cantidad de Pan tajado comprado "))
 arepasCompradas = int(input("Ingrese la cantidad de Arepas compradas "))
 jamonesComprados = int(input("Ingrese la cantidad de Jamon comprado "))
@@ -504,6 +504,48 @@ if arepasCompradas >= 1:
     descuento = 0.03
 if arepasCompradas >=1 and panComprado >=1 and jamonesComprados >=1:
   descuento = 0.02
-  valorTotal * descuento
+  valorTotal * descuento'''
 
 
+'''A = 0
+while A < 10:
+  print(A) 
+  A = A + 1'''
+
+
+'''print('************************* Menu')
+
+input('Selecione Opción:')'''
+
+
+'''numerousuario = int(input('Ingrese un Número: '))
+
+for tabla in range (1,11,1):
+    print(numerousuario*tabla)'''
+
+'''def factorial():
+  numero = int(input('Ingresa un Número: '))
+  factorial = 1
+
+for i in range (1 + numerodado + 1):
+     factorial *= i
+  
+  print('El Factorial de', numero, 'es', factorial)
+
+factorial()'''
+'''lista=['pato','gallina']
+lista.append('perro')
+lista.index(0)
+lista.remove('perro')
+lista.sort()'''
+
+print('Ingrese 5 caracteres para enlistarlos')
+primero=input()
+segundo=input()
+tercero=input()
+cuarto=input()
+quinto=input()
+
+lista=[primero , segundo , tercero , cuarto , quinto]
+
+print(lista)
