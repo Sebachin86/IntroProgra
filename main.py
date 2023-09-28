@@ -539,7 +539,7 @@ lista.index(0)
 lista.remove('perro')
 lista.sort()'''
 
-print('Ingrese 5 caracteres para enlistarlos')
+'''print('Ingrese 5 caracteres para enlistarlos')
 primero=input()
 segundo=input()
 tercero=input()
@@ -548,4 +548,15 @@ quinto=input()
 
 lista=[primero , segundo , tercero , cuarto , quinto]
 
-print(lista)
+print(lista)'''
+
+'''def listanumeros():
+  numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  for i in range(1,11):
+      print(numeros[-i], end=', ')
+
+listanumeros()'''
+
+def listamaterias():
+  materias = [Matemáticas, Física, Química, Historia y Lengua]
+  
