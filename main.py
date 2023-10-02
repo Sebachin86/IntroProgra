@@ -557,6 +557,61 @@ print(lista)'''
 
 listanumeros()'''
 
-def listamaterias():
-  materias = [Matemáticas, Física, Química, Historia y Lengua]
+'''def listamaterias():
+  materias = [Matemáticas, Física, Química, Historia y Lengua]'''
+
+# agregar nuevo contacto 1
+def agregar_contacto(lista_contactos, nombre, telefono, correo):
+    nuevo_contacto = [nombre, telefono, correo]
+    lista_contactos.append(nuevo_contacto)
+    print(f"Contacto '{nombre}' agregado con éxito.")
+
+# buscar nombre 2
+def buscar_contacto_por_nombre(lista_contactos, nombre):
+    for contacto in lista_contactos:
+        if contacto[0] == nombre:
+            print("Información del contacto:")
+            print(f"Nombre: {contacto[0]}")
+            print(f"Teléfono: {contacto[1]}")
+            print(f"Correo electrónico: {contacto[2]}")
+            return
+    print(f"El contacto '{nombre}' no se encontró en la lista.")
+
+# mostrar contactos 3
+def mostrar_contactos(lista_contactos):
+    if not lista_contactos:
+        print("No hay contactos almacenados.")
+    else:
+        print("Lista de contactos:")
+        for i, contacto in enumerate(lista_contactos, start=1):
+            print(f"{i}. Nombre: {contacto[0]}, Teléfono: {contacto[1]}, Correo: {contacto[2]}")
+
+# almacenar los contactos
+lista_de_contactos = []
+
+while True:
+    print("\n--- GESTIÓN DE CONTACTOS ---")
+    print("1. Agregar contacto")
+    print("2. Buscar contacto por nombre")
+    print("3. Mostrar todos los contactos")
+    print("4. Salir")
+
+    opcion = input("Seleccione una opción (1/2/3/4): ")
+
+    if opcion == "1":
+        nombre = input("Ingrese el nombre del contacto: ")
+        telefono = input("Ingrese el número de teléfono: ")
+        correo = input("Ingrese el correo electrónico: ")
+        agregar_contacto(lista_de_contactos, nombre, telefono, correo)
+    elif opcion == "2":
+        nombre = input("Ingrese el nombre del contacto que desea buscar: ")
+        buscar_contacto_por_nombre(lista_de_contactos, nombre)
+    elif opcion == "3":
+        mostrar_contactos(lista_de_contactos)
+    elif opcion == "4":
+        print("¡Hasta luego!")
+        break
+    else:
+        print("Opción no válida. Por favor, seleccione una opción válida (1/2/3/4).")
+
   
