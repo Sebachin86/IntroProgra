@@ -560,7 +560,7 @@ listanumeros()'''
 '''def listamaterias():
   materias = [Matemáticas, Física, Química, Historia y Lengua]'''
 
-# agregar nuevo contacto 1
+'''# agregar nuevo contacto 1
 def agregar_contacto(lista_contactos, nombre, telefono, correo):
     nuevo_contacto = [nombre, telefono, correo]
     lista_contactos.append(nuevo_contacto)
@@ -612,6 +612,43 @@ while True:
         print("¡Hasta luego!")
         break
     else:
-        print("Opción no válida. Por favor, seleccione una opción válida (1/2/3/4).")
+        print("Opción no válida. Por favor, seleccione una opción válida (1/2/3/4).")'''
 
-  
+ #multiplicar matrices
+'''
+
+def multiplicar_matrices(matriz1, matriz2):
+    resultado = []
+    for i in range(len(matriz1)):
+        fila = []
+        for j in range(len(matriz2[0])):
+            suma = 0
+            for k in range(len(matriz2)):
+                suma += matriz1[i][k] * matriz2[k][j]
+            fila.append(suma)
+        resultado.append(fila)
+    return resultado
+
+matriz1 = [[1, 2], [3, 4]]
+matriz2 = [[5, 6], [7, 8]]
+resultado = multiplicar_matrices(matriz1, matriz2)
+print(resultado)'''
+
+#adivinar numero
+import random
+def adivina():
+  numero_secreto = random.randint(1, 100)
+  adivinado = False
+
+  while not adivinado:
+      intento = int(input('Adivina el número: '))
+      if intento == numero_secreto:
+          print('¡Correcto! Has adivinado el número.')
+          adivinado = True
+      elif intento < numero_secreto:
+          print('El número es mayor.')
+      else:
+          print('El número es menor.')
+
+adivina()
+    
