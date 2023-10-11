@@ -633,7 +633,7 @@ matriz1 = [[1, 2], [3, 4]]
 matriz2 = [[5, 6], [7, 8]]
 resultado = multiplicar_matrices(matriz1, matriz2)
 print(resultado)'''
-
+'''
 #adivinar numero
 import random
 def adivina():
@@ -650,5 +650,114 @@ def adivina():
       else:
           print('El número es menor.')
 
-adivina()
-    
+adivina()'''
+'''
+#ejerciciodivisachatgpt
+# Crear el diccionario con las divisas y sus símbolos
+divisas = {'Euro': '€', 'Dollar': '$', 'Yen': '¥'}
+
+# Solicitar al usuario una divisa
+divisa = input("Introduce una divisa: ")
+
+# Comprobar si la divisa está en el diccionario
+if divisa in divisas:
+    simbolo = divisas[divisa]
+    print(f"El símbolo de {divisa} es {simbolo}")
+else:
+    print("La divisa no está en el diccionario.")
+
+'''
+'''
+#ejericiodivisaprofe
+def divisaSimbol():
+  monedas = {'Euro': '€', 'Dollar': '$', 'Yen': '¥'}
+  moneda = input('Introduce una divisa: ')
+  if moneda.title() in monedas:
+      print(monedas[moneda.title()])
+  else:
+      print('La divisa no está.')
+
+divisaSimbol()
+'''
+'''
+#cuadradoschatgpt
+# Solicitar al usuario un número
+numero = int(input("Introduce un número: "))
+
+# Crear un diccionario con claves y valores cuadrados
+diccionario = {i: i**2 for i in range(1, numero + 1)}
+
+# Imprimir el diccionario
+print(diccionario)
+
+#cuadradosprofe
+'''
+'''
+def numeroCuadrado():
+  numero = int(input('Dime un número:'))
+  cuadrados = ()
+
+  for num in range(1,numero+1):
+      cuadrados[num] = num ** 2
+  for num, valor in cuadrados.items():
+      print('%d -> %d' %  (num,valor))
+
+numeroCuadrado()
+'''
+'''
+#cadenachatgpt
+# Solicitar al usuario una cadena
+cadena = input("Introduce una cadena: ")
+
+# Crear un diccionario para contar las apariciones de caracteres
+conteo = {}
+
+# Iterar a través de la cadena y contar las apariciones
+for caracter in cadena:
+    if caracter in conteo:
+        conteo[caracter] += 1
+    else:
+        conteo[caracter] = 1
+
+# Imprimir el diccionario de conteo
+print(conteo)
+'''
+#cadenaprofe
+'''
+def cadenaRep():
+  cadena = input('Dame una cadena:')
+  for caracter in cadena:
+    if caracter in dict:
+      dict[caracter]+=1
+    else:
+      dict[caracter]=1
+
+  for caracter, valor in dict.items():
+    print(caracter, valor)
+
+cadenaRep()
+'''
+'''
+#ejercicionombrelohiceyo
+nombre = input("Introduce tu nombre: ")
+edad = input('Introduce tu edad: ')
+direccion = input('Introduce tu dirección: ')
+telefono = input('introduce tu teléfono: ')
+
+diccionario = {'Nombre': 'nombre', 'Edad': 'edad', 'Direccion': 'direccion', 'Telefono': 'telefono'}
+
+print(nombre, 'tiene', edad, 'años, vive en', direccion, 'y su número de teléfono es',  telefono)
+#correccion, podrías definir primero todo en una función y al final solo ejecutar la función
+'''
+
+#ejerciciofrutas
+
+diccionario = {'Platano': 1.35, 'Manzana': 0.80, 'Pera': 0.85, 'Naranja': 0.70}
+fruta = input('Introduce el nombre de una fruta: ')
+kilos = input('Introduce el número de kilos de fruta: ')
+precio = diccionario[fruta.title()] * kilos
+print('El precio total de las frutas es:', precio)
+if fruta in diccionario:
+  print(kilos, 'kilos de', fruta, 'valen', '$', diccionario[fruta.title()])
+
+#faltacorregir
