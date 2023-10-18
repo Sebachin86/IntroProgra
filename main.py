@@ -752,12 +752,90 @@ print(nombre, 'tiene', edad, 'años, vive en', direccion, 'y su número de telé
 
 #ejerciciofrutas
 
-diccionario = {'Platano': 1.35, 'Manzana': 0.80, 'Pera': 0.85, 'Naranja': 0.70}
+'''diccionario = {'Platano': 1.35, 'Manzana': 0.80, 'Pera': 0.85, 'Naranja': 0.70}
 fruta = input('Introduce el nombre de una fruta: ')
 kilos = input('Introduce el número de kilos de fruta: ')
 precio = diccionario[fruta.title()] * kilos
 print('El precio total de las frutas es:', precio)
 if fruta in diccionario:
-  print(kilos, 'kilos de', fruta, 'valen', '$', diccionario[fruta.title()])
+  print(kilos, 'kilos de', fruta, 'valen', '$', diccionario[fruta.title()])'''
 
 #faltacorregir
+
+#triqui 
+
+#Triqui
+'''def inicializar_tablero():
+    tablero = [[' ' for _ in range(3)] for _ in range(3)]
+    return tablero
+
+def imprimir_tablero(tablero):
+    filaT=0
+    for fila in tablero:
+        filaT=filaT+1
+        print("|".join(fila))
+        if filaT <= 2:
+           print("-" * 5)
+
+def realizar_jugada(tablero, jugador, fila, columna):
+    if tablero[fila][columna] == ' ':
+        tablero[fila][columna] = jugador
+        return True
+    else:
+        return False
+
+def verificar_estado(tablero):
+    # Verificar filas y columnas
+    for i in range(3):
+        if tablero[i][0] == tablero[i][1] == tablero[i][2] != ' ':
+            return tablero[i][0]
+        if tablero[0][i] == tablero[1][i] == tablero[2][i] != ' ':
+            return tablero[0][i]
+
+    # Verificar diagonales
+    if tablero[0][0] == tablero[1][1] == tablero[2][2] != ' ':
+        return tablero[0][0]
+    if tablero[0][2] == tablero[1][1] == tablero[2][0] != ' ':
+        return tablero[0][2]
+
+    # Verificar empate
+    empate = all(tablero[i][j] != ' ' for i in range(3) for j in range(3))
+    if empate:
+        return 'Empate'
+
+    return None
+
+def jugar_triqui():
+    tablero = inicializar_tablero()
+    jugador_actual = 'X'
+
+    while True:
+        imprimir_tablero(tablero)
+        print(f"Turno del jugador {jugador_actual}")
+
+        fila = int(input("Ingrese el número de fila (0, 1, o 2): "))
+        columna = int(input("Ingrese el número de columna (0, 1, o 2): "))
+
+        if realizar_jugada(tablero, jugador_actual, fila, columna):
+            estado = verificar_estado(tablero)
+
+            if estado:
+                imprimir_tablero(tablero)
+                if estado == 'Empate':
+                    print("¡Es un empate!")
+                else:
+                    print(f"¡El jugador {estado} ha ganado!")
+                break
+
+            if jugador_actual == 'X':
+              jugador_actual = 'O' 
+            else: 
+              jugador_actual= 'X'
+
+jugar_triqui()
+'''
+
+
+
+#parcial 2
+
