@@ -834,6 +834,310 @@ def jugar_triqui():
 
 jugar_triqui()
 '''
+#mazo
+'''
+import random
+
+# Crear un mazo de cartas
+def crear_mazo():
+    valores = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+    palos = ['Corazones', 'Diamantes', 'Tréboles', 'Picas']
+    mazo = [{'valor': valor, 'palo': palo} for valor in valores for palo in palos]
+    return mazo
+
+# Barajar el mazo
+def barajar_mazo(mazo):
+    random.shuffle(mazo)
+
+# Repartir cartas a los jugadores
+def repartir_cartas(mazo, num_jugadores, cartas_por_jugador):
+    manos = [[] for _ in range(num_jugadores)]
+
+    for _ in range(cartas_por_jugador):
+        for jugador in range(num_jugadores):
+            carta = mazo.pop()
+            manos[jugador].append(carta)
+
+    return manos
+
+# Mostrar las cartas que le quedaron a cada jugador
+def mostrar_cartas(manos):
+    for i, mano in enumerate(manos):
+        print(f'Jugador {i + 1}:')
+        for carta in mano:
+            print(f" - {carta['valor']} de {carta['palo']}")
+
+def main():
+    mazo = crear_mazo()
+    barajar_mazo(mazo)
+    num_jugadores = 2
+    cartas_por_jugador = 5
+
+    manos = repartir_cartas(mazo, num_jugadores, cartas_por_jugador)
+    mostrar_cartas(manos)
+
+if __name__ == "__main__":
+    main()
+'''
+# ejercicios
+
+#Crea un programa para llevar un registro de ventas diarias en una tienda. Cada venta se representa como una lista de listas con detalles como el producto vendido, la cantidad y el precio. Calcular el total de ventas diarias y mostrarlo en pantalla.
+
+# Función para calcular el total de una venta
+def calcular_total(venta):
+    return venta[1] * venta[2]
+
+# Función para calcular el total de ventas diarias
+def calcular_total_ventas(ventas):
+    total = 0
+    for venta in ventas:
+        total += calcular_total(venta)
+    return total
+
+# Función para mostrar el detalle de las ventas
+def mostrar_ventas(ventas):
+    for i, venta in enumerate(ventas, start=1):
+        producto, cantidad, precio_unitario = venta
+        total_venta = calcular_total(venta)
+        print(f"Venta {i}:")
+        print(f"Producto: {producto}")
+        print(f"Cantidad: {cantidad}")
+        print(f"Precio Unitario: ${precio_unitario}")
+        print(f"Total de la Venta: ${total_venta}")
+        print("-" * 20)
+
+def main():
+    ventas_diarias = []
+    while True:
+        producto = input("Ingrese el nombre del producto (o 'fin' para terminar): ")
+        if producto == "fin":
+            break
+        cantidad = int(input("Ingrese la cantidad vendida: "))
+        precio_unitario = float(input("Ingrese el precio unitario: "))
+        venta = [producto, cantidad, precio_unitario]
+        ventas_diarias.append(venta)
+
+    print("\nRegistro de Ventas Diarias:")
+    mostrar_ventas(ventas_diarias)
+    total_ventas = calcular_total_ventas(ventas_diarias)
+    print(f"Total de Ventas Diarias: ${total_ventas}")
+
+if __name__ == "__main__":
+    main()
+
+#Crea un programa que permita sumar 2 matrices, que serán representadas como listas de listas, y guardar el resultado en una nueva matriz para ser mostrado en pantalla.
+
+# Función para sumar dos matrices
+def sumar_matrices(matriz1, matriz2):
+    if len(matriz1) != len(matriz2) or len(matriz1[0]) != len(matriz2[0]):
+        print("No se pueden sumar matrices de diferentes tamaños.")
+        return None
+
+    resultado = []
+
+    for i in range(len(matriz1)):
+        fila_resultado = []
+        for j in range(len(matriz1[0]):
+            suma = matriz1[i][j] + matriz2[i][j]
+            fila_resultado.append(suma)
+        resultado.append(fila_resultado)
+
+    return resultado
+
+# Función para mostrar una matriz
+def mostrar_matriz(matriz):
+    for fila in matriz:
+        for elemento in fila:
+            print(elemento, end="\t")
+        print()
+
+def main():
+    # Definir las matrices
+    matriz1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    matriz2 = [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+
+    # Sumar las matrices
+    resultado = sumar_matrices(matriz1, matriz2)
+
+    if resultado:
+        print("Matriz 1:")
+        mostrar_matriz(matriz1)
+        print("\nMatriz 2:")
+        mostrar_matriz(matriz2)
+        print("\nResultado de la suma:")
+        mostrar_matriz(resultado)
+
+if __name__ == "__main__":
+    main()
+
+# Crea una función que tome una matriz representada como una lista de listas y devuelva su matriz transpuesta. La matriz transpuesta se obtiene intercambiando filas por columnas.
+
+# Función para calcular la matriz transpuesta
+def matriz_transpuesta(matriz):
+    # Obtener el número de filas y columnas de la matriz original
+    num_filas = len(matriz)
+    num_columnas = len(matriz[0])
+
+    # Crear una matriz vacía para la matriz transpuesta
+    matriz_transpuesta = []
+
+    # Recorrer las columnas y crear filas en la matriz transpuesta
+    for j in range(num_columnas):
+        fila_transpuesta = []
+        for i in range(num_filas):
+            fila_transpuesta.append(matriz[i][j])
+        matriz_transpuesta.append(fila_transpuesta)
+
+    return matriz_transpuesta
+
+# Función para mostrar una matriz
+def mostrar_matriz(matriz):
+    for fila in matriz:
+        for elemento in fila:
+            print(elemento, end="\t")
+        print()
+
+# Ejemplo de uso
+def main():
+    matriz_original = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+    print("Matriz Original:")
+    mostrar_matriz(matriz_original)
+
+    matriz_transpuesta_resultante = matriz_transpuesta(matriz_original)
+
+    print("\nMatriz Transpuesta:")
+    mostrar_matriz(matriz_transpuesta_resultante)
+
+if __name__ == "__main__":
+    main()
+
+# Crea una función que realice la multiplicación de dos matrices. La multiplicación de matrices implica multiplicar cada elemento de una fila de la primera matriz por cada elemento de una columna de la segunda matriz y sumar los resultados.
+
+# Función para multiplicar dos matrices
+def multiplicar_matrices(matriz1, matriz2):
+    # Asegurarse de que las matrices sean multiplicables
+    if len(matriz1[0]) != len(matriz2):
+        print("No se pueden multiplicar las matrices debido a dimensiones incompatibles.")
+        return None
+
+    # Obtener el número de filas y columnas de las matrices
+    num_filas_matriz1 = len(matriz1)
+    num_columnas_matriz1 = len(matriz1[0])
+    num_columnas_matriz2 = len(matriz2[0])
+
+    # Crear una matriz vacía para el resultado
+    resultado = [[0 for _ in range(num_columnas_matriz2)] for _ in range(num_filas_matriz1)]
+
+    # Realizar la multiplicación de matrices
+    for i in range(num_filas_matriz1):
+        for j in range(num_columnas_matriz2):
+            for k in range(num_columnas_matriz1):
+                resultado[i][j] += matriz1[i][k] * matriz2[k][j]
+
+    return resultado
+
+# Función para mostrar una matriz
+def mostrar_matriz(matriz):
+    for fila in matriz:
+        for elemento in fila:
+            print(elemento, end="\t")
+        print()
+
+# Ejemplo de uso
+def main():
+    matriz1 = [[1, 2, 3], [4, 5, 6]]
+    matriz2 = [[7, 8], [9, 10], [11, 12]]
+
+    print("Matriz 1:")
+    mostrar_matriz(matriz1)
+
+    print("\nMatriz 2:")
+    mostrar_matriz(matriz2)
+
+    resultado = multiplicar_matrices(matriz1, matriz2)
+
+    if resultado:
+        print("\nResultado de la multiplicación:")
+        mostrar_matriz(resultado)
+
+if __name__ == "__main__":
+    main()
+
+#Crea una función que encuentre el elemento máximo en una matriz representada como una lista de listas.
+
+# Función para encontrar el elemento máximo en una matriz
+def encontrar_maximo_en_matriz(matriz):
+    if not matriz:
+        return None
+
+    maximo = matriz[0][0]
+
+    for fila in matriz:
+        for elemento in fila:
+            if elemento > maximo:
+                maximo = elemento
+
+    return maximo
+
+# Ejemplo de uso
+def main():
+    matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+    print("Matriz:")
+    for fila in matriz:
+        for elemento in fila:
+            print(elemento, end="\t")
+        print()
+
+    maximo = encontrar_maximo_en_matriz(matriz)
+
+    if maximo is not None:
+        print(f"El elemento máximo en la matriz es: {maximo}")
+    else:
+        print("La matriz está vacía.")
+
+if __name__ == "__main__":
+    main()
+
+#Crea una función que realice el producto escalar de una matriz por un número. Debes multiplicar cada elemento de la matriz por el número dado y devolver la matriz resultante.
+
+# Función para realizar el producto escalar de una matriz por un número
+def producto_escalar(matriz, numero):
+    resultado = []
+
+    for fila in matriz:
+        fila_resultado = [elemento * numero for elemento in fila]
+        resultado.append(fila_resultado)
+
+    return resultado
+
+# Función para mostrar una matriz
+def mostrar_matriz(matriz):
+    for fila in matriz:
+        for elemento in fila:
+            print(elemento, end="\t")
+        print()
+
+# Ejemplo de uso
+def main():
+    matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    numero = 2
+
+    print("Matriz Original:")
+    mostrar_matriz(matriz)
+
+    resultado = producto_escalar(matriz, numero)
+
+    print(f"\nResultado del producto escalar por {numero}:")
+    mostrar_matriz(resultado)
+
+if __name__ == "__main__":
+    main()
+
+
+
+
 
 
 
