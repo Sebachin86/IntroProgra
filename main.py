@@ -880,7 +880,7 @@ if __name__ == "__main__":
     main()
 '''
 # ejercicios
-
+'''
 #Crea un programa para llevar un registro de ventas diarias en una tienda. Cada venta se representa como una lista de listas con detalles como el producto vendido, la cantidad y el precio. Calcular el total de ventas diarias y mostrarlo en pantalla.
 
 # Función para calcular el total de una venta
@@ -1140,6 +1140,59 @@ if __name__ == "__main__":
 
 
 
-
+'''
 #parcial 2
 
+#clase
+#ejercicio1(malo)
+'''set1 = input
+set1 = {hola, adios, buenas, chao}
+set2 = {adios, chao}
+if set2 in set1:
+    print('El conjunto 2 está contenido en el conjunto 1')
+'''
+#ejercicio2
+'''set1 = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+set1 = {x for x in set1 if x % 2 == 0}
+print(set1)'''
+#otra solucion
+'''def eliminaImparSet():
+  numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+  numbers = {x for x in numbers if x % 2 == 0}
+  print(numbers)
+
+eliminaImparSet()'''
+#Ejercicio3
+estudiantes_primaria = set()
+estudiantes_secundaria = set()
+
+# pedir nombres primaria
+print("Ingrese los nombres de los estudiantes de primaria (digite 'salir' para salir):")
+while True:
+    nombre = input()
+    if nombre == 'salir':
+        break
+    else:
+        estudiantes_primaria.add(nombre)
+
+# pedir nombres secundaria
+print("Ingrese los nombres de los estudiantes de secundaria (digita 'salir' para salir):")
+while True:
+    nombre = input()
+    if nombre == 'salir':
+        break
+    else:
+        estudiantes_secundaria.add(nombre)
+
+# mostrar nombres sin repetir de primaria y secundaria
+print("Nombres de alumnos de primaria y secundaria sin repetir:")
+print(estudiantes_primaria | estudiantes_secundaria)
+
+# mostrar nombres que se repiten
+print("Nombres de alumnos que se repiten:")
+print(estudiantes_primaria & estudiantes_secundaria)
+
+# mostrar nombres de primaria que no se repiten en secundaria
+print("Nombres de alumnos de primaria que no se repiten en secundaria:")
+print(estudiantes_primaria - estudiantes_secundaria)
