@@ -1164,7 +1164,7 @@ print(set1)'''
 
 eliminaImparSet()'''
 #Ejercicio3
-estudiantes_primaria = set()
+'''estudiantes_primaria = set()
 estudiantes_secundaria = set()
 
 # pedir nombres primaria
@@ -1196,3 +1196,260 @@ print(estudiantes_primaria & estudiantes_secundaria)
 # mostrar nombres de primaria que no se repiten en secundaria
 print("Nombres de alumnos de primaria que no se repiten en secundaria:")
 print(estudiantes_primaria - estudiantes_secundaria)
+'''
+'''
+def suma_hasta_n(n):
+  # Verificar la precondición: n debe ser un número entero positivo
+  if not isinstance(n, int) or n <= 0:
+      return "Entrada inválida. 'n' debe ser un número entero positivo."
+
+  suma = 0
+  for i in range(1, n + 1):
+      suma += i
+
+  return suma
+
+# prueba
+n = 10  # del 1 al que
+resultado = suma_hasta_n(n)
+print(f"La suma de los números del 1 al {n} es: {resultado}")
+'''
+#Parcial 3
+
+'''Crea un programa que guarde en un diccionario
+{'Euro':'€', 'Dollar':'$', 'Yen':'¥'}, pregunte al usuario por
+una divisa y muestre su símbolo o un mensaje de aviso si
+la divisa no está en el diccionario.
+'''
+'''
+divisas = {'Euro':'€', 'Dollar':'$', 'Yen':'¥'}
+divisa = input("Ingrese una divisa: ")
+if divisa in divisas:
+  print(divisas[divisa])
+else:
+  print("La divisa no está en el diccionario.")
+'''
+'''crea un programa python que pida un número por teclado y
+que cree un diccionario cuyas claves sean desde el número
+1 hasta el número indicado, y los valores sean los
+cuadrados de las claves.
+ '''
+'''num = int(input("Ingrese un número: "))
+
+diccionario = {}
+
+for i in range(1, num+1):
+    diccionario[i] = i**2
+'''
+
+'''Crea programa que pregunte al usuario su nombre, edad,
+dirección y teléfono y lo guarde en un diccionario. Después
+debe mostrar por pantalla el mensaje: <nombre> tiene
+<edad> años, vive en <dirección> y su número de teléfono
+es <teléfono>.
+'''
+'''
+nombre = input("Ingrese su nombre: ")
+edad = input("Ingrese su edad: ")
+direccion = input("Ingrese su dirección: ")
+telefono = input("Ingrese su teléfono: ")
+
+info_persona = {
+    'nombre': nombre,
+    'edad': edad,
+    'dirección': direccion,
+    'teléfono': telefono
+}
+
+mensaje = f"{info_persona['nombre']} tiene {info_persona['edad']} años, vive en {info_persona['dirección']} y su número de teléfono es {info_persona['teléfono']}."
+print(mensaje)
+'''
+'''
+Crea un programa que guarde en un diccionario los precios de las frutas de la tabla, pregunte al usuario por una fruta, un número de kilos y muestre por pantalla el precio de ese número de kilos de fruta. Si la fruta no está en el diccionario debe mostrar un mensaje informando de ello.
+Fruta / Precio/Kg
+Platano : 1.35
+Manzana : 0.80
+Pera : 0.85
+Naranja : 0.70
+'''
+'''
+frutas = {
+	"Platano": 1.35,
+	"Manzana": 0.80,
+	"Pera": 0.85,
+	"Naranja": 0.70
+}
+
+fruta = input("Ingrese una fruta: ")
+kilos = float(input("Ingrese el número de kilos: "))
+
+if fruta in frutas:
+	precio = frutas[fruta] * kilos
+	print("El precio de", kilos, "kilos de", fruta, "es:", precio)
+else:
+	print("La fruta no está en el diccionario.")
+ '''
+'''
+Crea un programa que permita gestionar la base de datos
+de clientes de una empresa. Los clientes se guardarán en
+un diccionario en el que la clave de cada cliente será su CC,
+y el valor será otro diccionario con los datos del cliente
+(nombre, dirección, teléfono, correo, preferente), donde
+preferencial tendrá el valor True si se trata de un cliente
+preferencial. El programa debe preguntar al usuario por una
+opción del siguiente menú: (1) Añadir cliente, (2) Eliminar
+cliente, (3) Mostrar cliente, (4) Listar todos los clientes, (5)
+Listar clientes preferentes, (6) Terminar.
+'''
+'''
+clientes = {}
+
+while True:
+	print("Menú:")
+	print("1) Añadir cliente")
+	print("2) Eliminar cliente")
+	print("3) Mostrar cliente")
+	print("4) Listar todos los clientes")
+	print("5) Listar clientes preferentes")
+	print("6) Terminar")
+
+	opcion = int(input("Elija una opción: "))
+
+	if opcion == 1:
+		cc = input("Ingrese el número de CC del cliente: ")
+		nombre = input("Ingrese el nombre del cliente: ")
+		direccion = input("Ingrese la dirección del cliente: ")
+		telefono = input("Ingrese el número de teléfono del cliente: ")
+		correo = input("Ingrese el correo electrónico del cliente: ")
+		preferente = input("¿Es un cliente preferente? (si/no): ")
+
+		cliente = {
+			"nombre": nombre,
+			"direccion": direccion,
+			"telefono": telefono,
+			"correo": correo,
+			"preferente": preferente.lower() == "si"
+		}
+
+		clientes[cc] = cliente
+
+	elif opcion == 2:
+		cc = input("Ingrese el número de CC del cliente que desea eliminar: ")
+		if cc in clientes:
+			del clientes[cc]
+			print("Cliente eliminado.")
+		else:
+			print("El cliente no existe.")
+
+	elif opcion == 3:
+		cc = input("Ingrese el número de CC del cliente que desea mostrar: ")
+		if cc in clientes:
+			cliente = clientes[cc]
+			print("Cliente:", cliente)
+		else:
+			print("El cliente no existe.")
+
+	elif opcion == 4:
+		for cc, cliente in clientes.items():
+			print("CC:", cc)
+			print("Nombre:", cliente["nombre"])
+			print("Dirección:", cliente["direccion"])
+			print("Teléfono:", cliente["telefono"])
+			print("Correo:", cliente["correo"])
+			print("Preferente:", cliente["preferente"])
+			print()
+
+	elif opcion == 5:
+		for cc, cliente in clientes.items():
+			if cliente["preferente"]:
+				print("CC:", cc)
+				print("Nombre:", cliente["nombre"])
+				print("Dirección:", cliente["direccion"])
+				print("Teléfono:", cliente["telefono"])
+				print("Correo:", cliente["correo"])
+				print("Preferente:", cliente["preferente"])
+				print()
+
+	elif opcion == 6:
+		break
+
+print("Programa terminado.")
+'''
+'''
+Crea un programa que determine si un conjunto es un
+subconjunto de otro, Sets de ejemplo:
+set1 = {1, 2, 3, 4, 5}
+set2 = {2, 3, 4}
+'''
+'''
+set1 = {1, 2, 3, 4, 5}
+set2 = {2, 3, 4}
+
+is_subset = set2.issubset(set1)
+'''
+'''
+Crea un programa que solicite al usuario los nombres de
+los estudiantes de primaria (usando un menú con un
+while), luego los de secundaria, y que muestre por
+pantalla los nombres de alumnos de primaria y
+secundaria sin repetir, luego los que se repiten, luego que
+nombres de primaria no se repiten en secundaria.
+'''
+'''
+primaria = []
+secundaria = []
+
+while True:
+    print("1. Ingresar nombre de estudiante de primaria")
+    print("2. Ingresar nombre de estudiante de secundaria")
+    print("3. Mostrar nombres de alumnos de primaria y secundaria sin repetir")
+    print("4. Mostrar nombres de alumnos que se repiten")
+    print("5. Mostrar nombres de primaria que no se repiten en secundaria")
+    print("6. Salir")
+    opcion = int(input("Ingrese una opción: "))
+
+    if opcion == 1:
+        nombre = input("Ingrese el nombre del estudiante de primaria: ")
+        primaria.append(nombre)
+    elif opcion == 2:
+        nombre = input("Ingrese el nombre del estudiante de secundaria: ")
+        secundaria.append(nombre)
+    elif opcion == 3:
+        alumnos_sin_repetir = set(primaria + secundaria)
+        print("Nombres de alumnos de primaria y secundaria sin repetir:")
+        for nombre in alumnos_sin_repetir:
+            print(nombre)
+    elif opcion == 4:
+        alumnos_repetidos = set(primaria) & set(secundaria)
+        print("Nombres de alumnos que se repiten:")
+        for nombre in alumnos_repetidos:
+            print(nombre)
+    elif opcion == 5:
+        primaria_sin_repetir = set(primaria) - set(secundaria)
+        print("Nombres de alumnos de primaria que no se repiten en secundaria:")
+        for nombre in primaria_sin_repetir:
+            print(nombre)
+    elif opcion == 6:
+        break
+    else:
+        print("Opción inválida.")
+'''
+'''
+ejemplo csv
+'''
+'''
+import csv
+
+data = [
+    ['Name', 'Age', 'City'],
+    ['John', 25, 'New York'],
+    ['Emily', 30, 'Los Angeles'],
+    ['Tom', 35, 'Chicago']
+]
+
+filename = 'example.csv'
+
+with open(filename, 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerows(data)
+'''
